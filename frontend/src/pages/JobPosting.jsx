@@ -37,6 +37,7 @@ const JobPosting = () => {
         Date: "",
       });
     } catch (error) {
+      console.log("error");
       console.error("Error posting job:", error.response?.data || error);
     }
   };
