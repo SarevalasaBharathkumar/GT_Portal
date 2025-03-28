@@ -1,0 +1,102 @@
+.navbar-nav .nav-link {
+  widht:100%;
+  font-size: 18px;
+  padding: 10px 15px;
+  transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ddd;
+}
+
+.profile-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #000000;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+/*job posting*/
+
+/* Page Background */
+.job-posting-container {
+  background: #0d0d0d;
+  padding: 80px 0;
+}
+
+/* Form Card Styling */
+.form-card {
+  background: rgba(20, 20, 20, 0.9);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Form Split */
+.form-left, .form-right {
+  width: 50%;
+}
+
+.form-left input,
+.form-left textarea,
+.form-right input,
+.form-right select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background: rgba(30, 30, 30, 0.8);
+  color: #ffffff;
+  font-size: 16px;
+  transition: 0.3s ease-in-out;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #ff6600;
+  box-shadow: 0 0 10px #ff6600;
+  outline: none;
+}
+
+/* Glossy Button */
+.btn-glossy {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #ff6600, #ff3300);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-glossy:hover {
+  background: linear-gradient(135deg, #ff3300, #cc0000);
+  box-shadow: 0 0 15px #ff3300;
+}
+
+/* Responsive - Stack fields on small screens */
+@media (max-width: 768px) {
+  .form-left, .form-right {
+    width: 100%;
+    padding: 0;
+  }
+}
+ 

@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "companies",
+  "info": {
+    "singularName": "company",
+    "pluralName": "companies",
+    "displayName": "Company"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Website": {
+      "type": "string"
+    },
+    "Industry": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "blocks"
+    },
+    "Badge": {
+      "type": "boolean"
+    }
+  }
+}

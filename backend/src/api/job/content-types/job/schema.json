@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jobs",
+  "info": {
+    "singularName": "job",
+    "pluralName": "jobs",
+    "displayName": "Job",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Location": {
+      "type": "text"
+    },
+    "Salary": {
+      "type": "decimal",
+      "required": true
+    },
+    "Skills": {
+      "type": "json"
+    },
+    "Job_type": {
+      "type": "enumeration",
+      "enum": [
+        "Full-time",
+        "Part-time",
+        "Contract"
+      ]
+    },
+    "Date": {
+      "type": "datetime"
+    },
+    "companies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "jobs"
+    },
+    "applications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::application.application",
+      "mappedBy": "job"
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}
