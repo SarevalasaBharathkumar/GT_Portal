@@ -14,10 +14,6 @@ export async function loginUser(email, password) {
 
         if (response.ok && data.jwt) {
             localStorage.setItem("token", data.jwt);
-            setTimeout(() => {
-                alert("Login successful! Redirecting...");
-                window.location.href = "/dashboard";
-            }, 100);
             return { success: true };
         } else {
             return { success: false, error: data.error?.message || "Login failed" };
@@ -62,10 +58,6 @@ export async function registerUser(username, email, password, userRole) {
             return { success: false, error: updateData.error?.message || "Failed to update UserRole" };
         }
 
-        setTimeout(() => {
-            alert("Signup successful! Click OK to proceed to login.");
-            window.location.href = "/login";
-        }, 100);
         
         return { success: true };
     } catch (error) {

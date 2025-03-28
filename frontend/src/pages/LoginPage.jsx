@@ -12,7 +12,9 @@ function LoginPage() {
         e.preventDefault();
         const response = await loginUser(email, password);
 
-        if (!(response.success)) {
+        if (response.success) {
+            navigate("/dashboard"); // Redirect on success
+        } else {
             alert(`Login failed: ${response.error}`);
         }
     };
