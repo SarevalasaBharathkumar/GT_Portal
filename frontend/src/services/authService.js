@@ -16,7 +16,7 @@ export async function loginUser(email, password) {
             localStorage.setItem("token", data.jwt);
             setTimeout(() => {
                 alert("Login successful! Redirecting...");
-                window.location.href = "/dashboard";
+                window.location.href = "/applyjob";
             }, 100);
             return { success: true };
         } else {
@@ -76,5 +76,5 @@ export async function registerUser(username, email, password, userRole) {
 
 export function logoutUser() {
     localStorage.removeItem("token");
-    window.location.href = "/login";
+    window.location.href = "/";
 }

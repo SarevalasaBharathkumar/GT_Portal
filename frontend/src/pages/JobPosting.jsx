@@ -24,10 +24,32 @@ const JobPosting = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
+    // Convert comma-separated Skills string into an array of objects
+    const formattedSkills = job.Skills.split(",").map((skill) => ({
+      Skills: skill.trim(), // Trim spaces
+    }));
+  
+    const jobData = {
+      Title: job.Title,
+      Description: job.Description,
+      Location: job.Location,
+      Salary: Number(job.Salary), // Ensure it's a number
+      Skills: formattedSkills, // Correct format for Strapi
+      Job_type: job.Job_type,
+      Date: job.Date,
+    };
+  
     try {
-      await axios.post("https://secure-fireworks-ad3f3462ec.strapiapp.com/api/jobs", { data: job });
+      const response = await axios.post(
+        "https://secure-fireworks-ad3f3462ec.strapiapp.com/api/jobs",
+        { data: jobData } // Wrap in "data"
+      );
       alert("Job Posted Successfully!");
-      setJob({ // Clear form fields after successful submission
+      console.log("Response:", response.data);
+      
+      // Clear form
+      setJob({
         Title: "",
         Description: "",
         Location: "",
@@ -37,16 +59,16 @@ const JobPosting = () => {
         Date: "",
       });
     } catch (error) {
-      console.log("error");
       console.error("Error posting job:", error.response?.data || error);
+      alert("Failed to post job!");
     }
   };
-
+  
   return (
     <>
       <Navbar />
       <div className="job-posting-container d-flex justify-content-center align-items-center min-vh-100">
-        <div className="form-card p-4 w-50">
+        <div className="form-card p-5 w-100">
           <h2 className="text-center text-white mb-4">Post a Job</h2>
           <form onSubmit={handleSubmit} className="d-flex flex-wrap">
             {/* Left Side */}
