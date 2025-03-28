@@ -15,10 +15,7 @@ function SignupPage() {
         e.preventDefault();
         const response = await registerUser(username, email, password, userRole);
 
-        if (response.success) {
-            alert("Signup successful! Redirecting to login...");
-            navigate("/login"); // Redirect after successful signup
-        } else {
+        if (!(response.success)) {
             alert(`Signup failed: ${response.error}`);
         }
     };

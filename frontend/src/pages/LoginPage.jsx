@@ -12,9 +12,7 @@ function LoginPage() {
         e.preventDefault();
         const response = await loginUser(email, password);
 
-        if (response.success) {
-            navigate("/applyjob"); // Redirect on success
-        } else {
+        if (!(response.success)) {
             alert(`Login failed: ${response.error}`);
         }
     };
