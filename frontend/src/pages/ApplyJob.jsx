@@ -43,7 +43,6 @@ function ApplyJob() {
                 <p><strong>Location:</strong> {Location}</p>
                 <p><strong>Salary:</strong> ${Salary}</p>
                 <p><strong>Skills:</strong> {Skills && Array.isArray(Skills) ? Skills.map(skill => skill.Skills).join(", ") : "N/A"}</p>
-
                 <div className="mt-auto text-center">
                     <button className="btn btn-primary">Apply Now</button>
                 </div>

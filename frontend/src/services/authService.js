@@ -16,7 +16,7 @@ export async function loginUser(email, password) {
             localStorage.setItem("token", data.jwt);
             setTimeout(() => {
                 alert("Login successful! Redirecting...");
-                window.location.href = "/applyjob";
+                window.location.href = "/dashboard";
             }, 100);
             return { success: true };
         } else {
